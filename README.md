@@ -34,7 +34,7 @@ cd opt120-backend-exemplo
 Não precisamos instalar o PostgreSQL no computador! Vamos usar o Docker para baixar e rodar um contêiner pronto com o banco de dados e a interface do pgAdmin. No terminal, execute:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 A flag -d significa "detached", liberando o seu terminal para o próximo passo. O Postgres estará rodando na porta 5432.
 
