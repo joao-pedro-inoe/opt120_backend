@@ -35,4 +35,41 @@ router.get('/', usuarioController.listarUsuarios);
  */
 router.post('/', usuarioController.criarUsuario);
 
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   put:
+ *     summary: Atualiza um usuário existente
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Usuário atualizado com sucesso
+ *       '404':
+ *         description: Usuário não encontrado
+ */
+router.put('/:id', usuarioController.atualizarUsuario);
+
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   delete:
+ *     summary: Deleta um usuário existente
+ *     responses:
+ *       '200':
+ *         description: Usuário deletado com sucesso
+ *       '404':
+ *         description: Usuário não encontrado
+ */
+router.delete('/:id', usuarioController.deletarUsuario);
+
 module.exports = router;
